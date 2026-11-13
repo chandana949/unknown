@@ -37,3 +37,13 @@ dist = dijkstra(graph, s)
 
 for i in range(1, n + 1):
     print(s, "to", i, "=", dist[i])
+
+5
+6
+1 2 2
+1 3 4
+2 3 1
+2 4 7
+3 5 3
+4 5 1
+1
