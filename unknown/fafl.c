@@ -38,16 +38,11 @@ void FIRST(char c)
     }
 }
 
-int main()
+void FOLLOW()
 {
-    scanf("%d",&n);
-    for(int i=0;i<n;i++) scanf(" %c=%s",&l[i],r[i]);
-
-    for(int i=0;i<n;i++) FIRST(l[i]);
-
     add(g[l[0]-'A'],'$');
-
     int ch;
+
     do {
         ch=0;
         for(int i=0;i<n;i++)
@@ -55,6 +50,7 @@ int main()
             {
                 char B=r[i][j];
                 int k;
+
                 for(k=j+1;r[i][k];k++)
                 {
                     char x=r[i][k];
@@ -63,17 +59,29 @@ int main()
                         ch|=add(g[B-'A'],x);
                         break;
                     }
+
                     for(int t=0;f[x-'A'][t];t++)
                         if(f[x-'A'][t]!='#')
                             ch|=add(g[B-'A'],f[x-'A'][t]);
 
                     if(!strchr(f[x-'A'],'#')) break;
                 }
+
                 if(!r[i][k])
                     for(int t=0;g[l[i]-'A'][t];t++)
                         ch|=add(g[B-'A'],g[l[i]-'A'][t]);
             }
     } while(ch);
+}
+
+int main()
+{
+    scanf("%d",&n);
+    for(int i=0;i<n;i++) scanf(" %c=%s",&l[i],r[i]);
+
+    for(int i=0;i<n;i++) FIRST(l[i]);
+
+    FOLLOW();
 
     int seen[26]={0};
 
