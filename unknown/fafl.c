@@ -96,3 +96,13 @@ int main()
 
     return 0;
 }
+
+8
+E=TX
+X=+TX
+X=#
+T=FY
+Y=*FY
+Y=#
+F=(E)
+F=i
