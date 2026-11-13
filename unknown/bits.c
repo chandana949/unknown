@@ -1,4 +1,3 @@
-
 def bit_stuff_sender(data_bits):
     stuffed = []
     count_ones = 0
@@ -48,3 +47,9 @@ frame = bit_stuff_flag(data)
 print("Transmitted Frame:", frame)
 received = bit_unstuff_frame(frame)
 print("Original Data:", received)
+
+1111101111110
+
+
+
+    
