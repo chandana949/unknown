@@ -73,3 +73,15 @@ flex program.l
 gcc lex.yy.c -o output
 ./output
     paste
+
+int main()
+{
+    int a = 10;
+    float b = 20;
+
+    if(a >= 5)
+        a = a + 1;
+
+    // This is a comment
+    return 0;
+}
